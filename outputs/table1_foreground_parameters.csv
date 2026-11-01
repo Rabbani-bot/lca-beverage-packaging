@@ -1,0 +1,5 @@
+system,vol,mass,mat,rc,form_kwh,rr,trips
+PET 0.5 L,0.5,0.022,pet,0.25,1.2,0.45,1
+Glass single-use,0.33,0.2,glass,0.5,0.5,0.7,1
+Glass refillable,0.33,0.35,glass,0.5,0.5,0.9,25
+Aluminium can,0.33,0.013,al,0.7,2.0,0.75,1

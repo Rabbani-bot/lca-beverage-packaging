@@ -1,0 +1,17 @@
+system,method,gwp_set,GWP,CED,Water
+PET 0.5 L,cutoff,AR6,171.3,3788.33,1190.6
+PET 0.5 L,cutoff,AR5,171.33,3788.33,1190.6
+PET 0.5 L,substitution,AR6,158.25,3313.13,992.6
+PET 0.5 L,substitution,AR5,158.27,3313.13,992.6
+Glass single-use,cutoff,AR6,666.9,9936.8,2181.82
+Glass single-use,cutoff,AR5,666.99,9936.8,2181.82
+Glass single-use,substitution,AR6,632.57,9500.44,2072.73
+Glass single-use,substitution,AR5,632.66,9500.44,2072.73
+Glass refillable,cutoff,AR6,189.06,2986.13,1730.55
+Glass refillable,cutoff,AR5,189.06,2986.13,1730.55
+Glass refillable,substitution,AR6,184.26,2925.04,1715.27
+Glass refillable,substitution,AR5,184.26,2925.04,1715.27
+Aluminium can,cutoff,AR6,244.7,3657.36,1010.0
+Aluminium can,cutoff,AR5,244.73,3657.36,1010.0
+Aluminium can,substitution,AR6,224.63,3391.45,908.95
+Aluminium can,substitution,AR5,224.64,3391.45,908.95

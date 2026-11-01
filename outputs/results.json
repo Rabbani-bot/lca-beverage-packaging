@@ -1,0 +1,67 @@
+{
+  "deterministic_gwp_cutoff_AR6": {
+    "PET 0.5 L": 171.30287599999997,
+    "Glass single-use": 666.8973524848485,
+    "Glass refillable": 189.06354218181815,
+    "Aluminium can": 244.70499581818183
+  },
+  "mc_gwp_P5_median_P95": {
+    "PET 0.5 L": [
+      144.9085589018199,
+      174.07650579591697,
+      209.8858960124713
+    ],
+    "Glass single-use": [
+      568.6585787796911,
+      674.8458051313645,
+      804.0414945398062
+    ],
+    "Glass refillable": [
+      143.9741285439187,
+      194.65295005943543,
+      272.97133999119137
+    ],
+    "Aluminium can": [
+      194.577301797613,
+      247.97093754118296,
+      312.36149073154263
+    ]
+  },
+  "prob_refillable_below_pet_pct": 29.7,
+  "prob_refillable_below_can_pct": 84.26,
+  "tornado": {
+    "Recycled content (30 / 70%)": [
+      2.7,
+      -2.7
+    ],
+    "Filling electricity (0.005 / 0.02 kWh)": [
+      -7.9,
+      15.7
+    ],
+    "Bottle mass (300 / 400 g)": [
+      -14.6,
+      14.6
+    ],
+    "Washing heat (0.08 / 0.30 MJ)": [
+      -12.0,
+      25.7
+    ],
+    "Trips per bottle (15 / 40)": [
+      26.2,
+      -14.7
+    ],
+    "Distribution distance (150 / 600 km)": [
+      -45.0,
+      89.9
+    ]
+  },
+  "breakeven_trips_vs_pet": {
+    "50 km": 15,
+    "100 km": 17,
+    "200 km": 24,
+    "300 km": "not reached within 40 trips",
+    "500 km": "not reached within 40 trips",
+    "800 km": "not reached within 40 trips",
+    "1200 km": "not reached within 40 trips"
+  }
+}

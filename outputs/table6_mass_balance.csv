@@ -1,0 +1,5 @@
+system,new_kg,recycled_kg,waste_kg,balance_error_kg
+PET 0.5 L,44.0,19.8,24.2,-0.0
+Glass single-use,606.0606,424.2424,181.8182,-0.0
+Glass refillable,42.4242,38.1818,4.2424,0.0
+Aluminium can,39.3939,29.5455,9.8485,0.0

@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Comparative LCA of beverage packaging (ISO 14040/44 structure)"
+authors:
+  - family-names: Rabbani
+    given-names: Mohammad
+version: 1.0.0
+date-released: 2026-11-01
+license: MIT
+repository-code: "https://github.com/Rabbani-bot/lca-beverage-packaging"
+keywords: [life-cycle-assessment, lca, iso-14040, carbon-footprint, monte-carlo, sensitivity-analysis, packaging, sustainability, python, ipcc-ar6]

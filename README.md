@@ -1,6 +1,10 @@
 # Comparative LCA of beverage packaging (ISO 14040/44 structure)
 
-> **Model inventory.** Unit-process values are rounded figures within ranges typical of public LCA literature, not values from ecoinvent or another licensed database. Replace them with licensed or primary data before making product claims.
+[![tests](https://github.com/Rabbani-bot/lca-beverage-packaging/actions/workflows/tests.yml/badge.svg)](https://github.com/Rabbani-bot/lca-beverage-packaging/actions/workflows/tests.yml) ![Python](https://img.shields.io/badge/python-3.11%20%7C%203.12-blue) ![License: MIT](https://img.shields.io/badge/license-MIT-green)
+
+> **Inventory.** Unit-process values are rounded figures within ranges typical of public LCA literature, not values from ecoinvent or another licensed database. Replace them with licensed or primary data before making product claims.
+
+![Life-cycle stage contribution](outputs/figures/01_stage_contribution.png)
 
 ## Goal and scope
 | Item | Choice |
@@ -12,7 +16,7 @@
 | End-of-life allocation | Cut-off (base case) and substitution/avoided burden (sensitivity, 0.9 quality factor) |
 | Uncertainty | 10,000-run Monte Carlo. Lognormal distributions on foreground parameters and on all unit processes (GSD 1.15). Background draws are shared across systems so comparisons are paired. |
 
-## Results (model inventory)
+## Results
 | System | GWP, kg CO2e | MC median [P5, P95] | CED, MJ | Water, L |
 |---|---|---|---|---|
 | PET 0.5 L | **171** | 174 [145, 210] | 3,788 | 1,191 |
@@ -55,6 +59,7 @@ python src/analyze.py && python -m pytest tests
 
 ## Links
 - Kaggle notebook: https://www.kaggle.com/rabbani0123 (runnable copy of `notebook.ipynb`)
+- Cite: see `CITATION.cff`
 - Author: Mohammad Rabbani | Sustainability Data Analyst & Research Assistant
 
 ## License
