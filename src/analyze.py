@@ -19,6 +19,12 @@ COL = dict(zip(SYS, [style.PALETTE[1], style.PALETTE[3], style.PALETTE[5], style
 STAGE_COL = dict(zip(lca.STAGES, ["#1D4E89", "#4F7CAC", "#9DB4C0", "#F6AE2D", "#00A6A6", "#5C677D", "#8AC926"]))
 
 
+def _gwp(det, system, method, gwp_set):
+    """GWP for one system/method/GWP-set combination (explicit mask; avoids DataFrame.query scoping issues)."""
+    row = det[(det.system == system) & (det.method == method) & (det.gwp_set == gwp_set)]
+    return float(row.GWP.iloc[0])
+
+
 def main():
     style.apply(); FIG.mkdir(parents=True, exist_ok=True)
     res = {}
@@ -56,7 +62,7 @@ def main():
     pd.DataFrame(summ).round(2).to_csv(OUT / "table4_monte_carlo_summary.csv", index=False)
     prob = pd.DataFrame([[np.mean(mc[a]["GWP"] < mc[b]["GWP"]) * 100 if a != b else np.nan for b in SYS] for a in SYS], index=SYS, columns=SYS)
     prob.round(1).to_csv(OUT / "table5_probability_lower_gwp.csv")
-    res["deterministic_gwp_cutoff_AR6"] = {s: float(det.query("system==@s and method=='cutoff' and gwp_set=='AR6'").GWP.iloc[0]) for s in SYS}
+    res["deterministic_gwp_cutoff_AR6"] = {s: _gwp(det, s, "cutoff", "AR6") for s in SYS}
     res["mc_gwp_P5_median_P95"] = {s: [float(np.percentile(mc[s]["GWP"], q)) for q in (5, 50, 95)] for s in SYS}
     res["prob_refillable_below_pet_pct"] = float(prob.loc["Glass refillable", "PET 0.5 L"])
     res["prob_refillable_below_can_pct"] = float(prob.loc["Glass refillable", "Aluminium can"])
@@ -179,7 +185,7 @@ def fig_recycling():
 
 
 def fig_heatmap(det):
-    d = det.query("method=='cutoff' and gwp_set=='AR6'").set_index("system")[["GWP", "CED", "Water"]].loc[SYS]
+    d = det[(det.method == "cutoff") & (det.gwp_set == "AR6")].set_index("system")[["GWP", "CED", "Water"]].loc[SYS]
     norm = d / d.min()
     fig, ax = plt.subplots(figsize=(8, 4.6))
     im = ax.imshow(norm.to_numpy(), cmap="YlOrRd", vmin=1, vmax=4)
@@ -197,7 +203,7 @@ def fig_methods(det):
     fig, ax = plt.subplots(figsize=(10, 4.6))
     variants = [("cutoff", "AR6", "o", "Cut-off, AR6 (base)"), ("substitution", "AR6", "s", "Substitution, AR6"), ("cutoff", "AR5", "^", "Cut-off, AR5")]
     for i, s in enumerate(SYS):
-        vals = [float(det.query("system==@s and method==@m and gwp_set==@g").GWP.iloc[0]) for m, g, _, _ in variants]
+        vals = [_gwp(det, s, m, g) for m, g, _, _ in variants]
         ax.plot([min(vals), max(vals)], [i, i], color="#BBB", lw=3, zorder=1)
         for v, (_, _, mk, lab) in zip(vals, variants):
             ax.scatter(v, i, marker=mk, s=70, color=COL[s], edgecolor="#222", zorder=3, label=lab if i == 0 else None)
