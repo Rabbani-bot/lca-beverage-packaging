@@ -58,7 +58,7 @@ python src/analyze.py && python -m pytest tests
 ```
 
 ## Links
-- Kaggle notebook: https://www.kaggle.com/rabbani0123 (runnable copy of `notebook.ipynb`)
+- Kaggle notebook (runs end-to-end on Kaggle): https://www.kaggle.com/code/rabbani0123/comparative-lca-of-beverage-packaging-iso-14040
 - Cite: see `CITATION.cff`
 - Author: Mohammad Rabbani | Sustainability Data Analyst & Research Assistant
 
